@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class LoveCampusApplicationTests {
 
     @Test
-    void contextLoads() {
+    void contextLoaads() {
     }
 
 }

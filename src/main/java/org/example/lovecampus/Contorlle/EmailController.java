@@ -19,7 +19,7 @@ public class EmailController { // 修正类名拼写
 
     @Autowired
     private MailService mailService;
-
+//查询邮箱
     @GetMapping("/emails")
     public ResponseEntity<?> getEmail(@RequestParam(required = false) String email) {
         if (email != null) {
@@ -32,6 +32,7 @@ public class EmailController { // 修正类名拼写
             return ResponseEntity.ok(emails);
         }
     }
+//    查询邮箱人数
     @GetMapping("/emailsleng")
     public ResponseEntity<?> getEmailleng() {
 
@@ -39,27 +40,5 @@ public class EmailController { // 修正类名拼写
             List<email> emails = emailServe.SelectEmailleng();
             return ResponseEntity.ok(emails.size());
         }
-
-
-    @PostMapping("/postemail")
-    public ResponseEntity<?> addUser(@RequestBody email email) {
-        try {
-            int result = emailServe.addEmail(email);
-            if (result > 0) {
-                // 返回插入后的用户对象（包含自增 id）
-                return ResponseEntity.ok(email);
-            } else {
-                return ResponseEntity.badRequest().body("插入用户失败");
-            }
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body("服务器错误: " + e.getMessage());
-        }
-    }
-
-
-    @GetMapping("/sendEmail")
-    public void sendEmail() {
-        mailService.sendEmail();
-    }
 
 }

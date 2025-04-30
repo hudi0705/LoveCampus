@@ -22,7 +22,7 @@ public class EmailServe {
     public email GetEmail(String email) {
         return emailMapper.GetEmail(email);
     }
-    public int addEmail(email email) {
-        return emailMapper.InsertEmail(email);
-    }
+//    public int addEmail(email email) {
+//        return emailMapper.InsertEmail(email);
+//    }
 }

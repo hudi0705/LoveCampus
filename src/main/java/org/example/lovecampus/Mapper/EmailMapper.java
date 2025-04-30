@@ -14,7 +14,7 @@ public interface EmailMapper {
     @Select("SELECT id, email FROM email")
     List<email> SelectEmail();
 
-    @Insert("INSERT INTO email (email) VALUES (#{email})")
-    @Options(useGeneratedKeys = true, keyProperty = "id") // 确保实体类有 id 字段的 setter
+    @Insert("INSERT INTO email (email,code) VALUES (#{email},#{code})")
+//    @Options(useGeneratedKeys = true, keyProperty = "param.id") // 确保实体类有 id 字段的 setter
     int InsertEmail(email email);
 }

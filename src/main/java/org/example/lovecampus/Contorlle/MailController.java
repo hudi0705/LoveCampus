@@ -21,5 +21,5 @@ public class MailController {
         mailService.sendEmail(email);
         return "发送成功";
     }
-
+//测试测试
 }

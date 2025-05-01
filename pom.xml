@@ -32,8 +32,6 @@
         <mybatis-spring-boot.version>3.0.5</mybatis-spring-boot.version>
     </properties>
     <dependencies>
-
-
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>

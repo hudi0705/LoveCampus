@@ -1,7 +1,7 @@
 package org.example.lovecampus.Mapper;
 
 import org.apache.ibatis.annotations.*;
-import org.example.lovecampus.email;
+import org.example.lovecampus.Entily.email;
 
 import java.util.List;
 
@@ -17,4 +17,6 @@ public interface EmailMapper {
     @Insert("INSERT INTO email (email,code) VALUES (#{email},#{code})")
 //    @Options(useGeneratedKeys = true, keyProperty = "param.id") // 确保实体类有 id 字段的 setter
     int InsertEmail(email email);
+    @Select("select code from email where email = #{emial}")
+    int GetCode(String emial);
 }

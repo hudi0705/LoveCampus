@@ -2,9 +2,8 @@ package org.example.lovecampus.Contorlle;
 
 import org.example.lovecampus.Serve.EmailServe;
 import org.example.lovecampus.Serve.MailService;
-import org.example.lovecampus.email;
+import org.example.lovecampus.Entily.email;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,6 +19,11 @@ public class MailController {
     public String sendEmail(@RequestBody email email) {
         mailService.sendEmail(email);
         return "发送成功";
+    }
+    @PostMapping("/yzEmail")
+    public String yzEmail(@RequestBody email email) {
+    mailService.yzEmail(email);
+        return "验证成功";
     }
 //测试测试
 }

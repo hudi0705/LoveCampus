@@ -1,6 +1,6 @@
 package org.example.lovecampus.Serve;
 
-import org.example.lovecampus.users;
+import org.example.lovecampus.Entily.users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package org.example.lovecampus.Serve;
 
-import org.example.lovecampus.email;
+import org.example.lovecampus.Entily.email;
 import org.example.lovecampus.Mapper.EmailMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

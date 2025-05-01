@@ -1,4 +1,4 @@
-package org.example.lovecampus;
+package org.example.lovecampus.Entily;
 
 import lombok.Data;
 

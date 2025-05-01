@@ -2,7 +2,7 @@ package org.example.lovecampus.Contorlle;
 
 import org.example.lovecampus.Serve.EmailServe;
 import org.example.lovecampus.Serve.MailService;
-import org.example.lovecampus.email;
+import org.example.lovecampus.Entily.email;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ public class EmailController { // 修正类名拼写
     public ResponseEntity<?> getEmail(@RequestParam(required = false) String email) {
         if (email != null) {
             // 根据 email 查询单个记录
-            org.example.lovecampus.email email1 = emailServe.GetEmail(email); // 修正参数传递
+            org.example.lovecampus.Entily.email email1 = emailServe.GetEmail(email); // 修正参数传递
             return ResponseEntity.ok(email1); // 返回查询结果
         } else {
             // 查询所有记录

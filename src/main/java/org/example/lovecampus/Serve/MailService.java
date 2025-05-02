@@ -54,6 +54,28 @@ int randomNum =suiji();
         return randomNum;
     };
     public void yzEmail(email email){
+        String successContent = "<div style=\"max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; background-color: #f8f9fa; border-radius: 10px;\">" +
+                "<div style=\"text-align: center; padding: 20px; background-color: #4CAF50; border-radius: 8px 8px 0 0;\">" +
+                "<h1 style=\"color: white; margin: 0; font-size: 24px;\">🎉 注册成功 🎉</h1>" +
+                "</div>" +
+                "<div style=\"padding: 30px; background-color: white; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);\">" +
+                "<p style=\"font-size: 16px; color: #333; line-height: 1.6;\">亲爱的用户：</p>" +
+                "<p style=\"font-size: 16px; color: #333; line-height: 1.6;\">恭喜您已成功注册恋与校园！</p>" +
+                "<div style=\"text-align: center; margin: 20px 0;\">" +
+                "<span style=\"font-size: 60px; color: #4CAF50;\">✓</span>" +
+                "</div>" +
+                "<p style=\"font-size: 16px; color: #333; line-height: 1.6;\">现在您可以：</p>" +
+                "<ul style=\"font-size: 15px; color: #333; line-height: 1.6; padding-left: 20px;\">" +
+                "<li>完善个人资料</li>" +
+                "<li>浏览校园动态</li>" +
+                "<li>结识志同道合的朋友</li>" +
+                "</ul>" +
+                "<div style=\"margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;\">" +
+                "<p style=\"font-size: 14px; color: #666; margin: 0;\">如有任何问题，请联系客服。</p>" +
+                "<p style=\"font-size: 14px; color: #666; margin: 5px 0 0 0;\">恋与校园团队</p>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
         boolean b = email.getCode() == emailMapper.GetCode(email.getEmail());
         if(b){
             MailAccount mailAccount = new MailAccount();
@@ -64,10 +86,8 @@ int randomNum =suiji();
             mailAccount.setPort(465);
             mailAccount.setAuth(true);
             mailAccount.setSslEnable(true);
-            MailUtil.send(mailAccount,email.getEmail(), "测试", "注册成功", true);
+            MailUtil.send(mailAccount,email.getEmail(), "测试", successContent, true);
 }
-
-
     }
 }
 

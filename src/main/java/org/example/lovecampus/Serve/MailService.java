@@ -12,14 +12,16 @@ import java.util.Random;
 
 /**
  * 邮件业务类
+ *
  * @author qzz
  */
 @Service
 public class MailService {
     @Autowired
     private EmailMapper emailMapper;
-    public void sendEmail(email email){
-int randomNum =suiji();
+
+    public void sendEmail(email email) {
+        int randomNum = suiji();
         String content = "<div style=\"max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; background-color: #f8f9fa; border-radius: 10px;\">" +
                 "<div style=\"text-align: center; padding: 20px; background-color: #4CAF50; border-radius: 8px 8px 0 0;\">" +
                 "<h1 style=\"color: white; margin: 0; font-size: 24px;\">🎉 欢迎加入 恋与校园 🎉</h1>" +
@@ -45,15 +47,19 @@ int randomNum =suiji();
         mailAccount.setPort(465);
         mailAccount.setAuth(true);
         mailAccount.setSslEnable(true);
-        MailUtil.send(mailAccount,email.getEmail(), "测试", content, true);
-       emailMapper.InsertEmail(new email(email.getId(),email.getEmail(),randomNum));
+        MailUtil.send(mailAccount, email.getEmail(), "测试", content, true);
+        emailMapper.InsertEmail(new email(email.getId(), email.getEmail(), randomNum));
     }
-    static int suiji(){
+
+    static int suiji() {
         Random random = new Random();
-        int randomNum = random.nextInt(9999)+1;
+        int randomNum = random.nextInt(9999) + 1;
         return randomNum;
-    };
-    public void yzEmail(email email){
+    }
+
+    ;
+
+    public void yzEmail(email email) {
         String successContent = "<div style=\"max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; background-color: #f8f9fa; border-radius: 10px;\">" +
                 "<div style=\"text-align: center; padding: 20px; background-color: #4CAF50; border-radius: 8px 8px 0 0;\">" +
                 "<h1 style=\"color: white; margin: 0; font-size: 24px;\">🎉 注册成功 🎉</h1>" +
@@ -77,7 +83,7 @@ int randomNum =suiji();
                 "</div>" +
                 "</div>";
         boolean b = email.getCode() == emailMapper.GetCode(email.getEmail());
-        if(b){
+        if (b) {
             MailAccount mailAccount = new MailAccount();
             mailAccount.setHost("smtp.qq.com");
             mailAccount.setFrom("1830225455@qq.com");
@@ -86,8 +92,8 @@ int randomNum =suiji();
             mailAccount.setPort(465);
             mailAccount.setAuth(true);
             mailAccount.setSslEnable(true);
-            MailUtil.send(mailAccount,email.getEmail(), "测试", successContent, true);
-}
+            MailUtil.send(mailAccount, email.getEmail(), "测试", successContent, true);
+        }
     }
 }
 

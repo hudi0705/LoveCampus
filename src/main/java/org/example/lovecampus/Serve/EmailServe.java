@@ -16,9 +16,11 @@ public class EmailServe {
     public List<email> SelectEmail() {
         return emailMapper.SelectEmail();
     }
+
     public List<email> SelectEmailleng() {
         return emailMapper.SelectEmail();
     }
+
     public email GetEmail(String email) {
         return emailMapper.GetEmail(email);
     }

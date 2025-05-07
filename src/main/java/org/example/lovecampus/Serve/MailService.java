@@ -53,7 +53,7 @@ public class MailService {
 
     static int suiji() {
         Random random = new Random();
-        int randomNum = random.nextInt(9999) + 1;
+        int randomNum = random.nextInt(9000) + 1000;
         return randomNum;
     }
 
@@ -94,6 +94,10 @@ public class MailService {
             mailAccount.setSslEnable(true);
             MailUtil.send(mailAccount, email.getEmail(), "测试", successContent, true);
         }
+    }
+    public String DeleteEmail(email email) {
+        emailMapper.DeleteEmail(email);
+        return "超时删除";
     }
 }
 

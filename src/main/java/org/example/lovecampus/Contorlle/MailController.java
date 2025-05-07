@@ -27,6 +27,11 @@ public class MailController {
         mailService.yzEmail(email);
         return "验证成功";
     }
+    @PostMapping("/DeleteEmail")
+    public String DeleteEmail(@RequestBody email email) {
+mailService.DeleteEmail(email);
+return "执行成功";
+    }
 
 //测试测试
 }

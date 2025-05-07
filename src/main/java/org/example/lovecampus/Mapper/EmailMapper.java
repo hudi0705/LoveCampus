@@ -19,4 +19,6 @@ public interface EmailMapper {
     int InsertEmail(email email);
     @Select("select code from email where email = #{emial}")
     int GetCode(String emial);
+    @Delete("DELETE FROM email WHERE  email = #{email}")
+    int DeleteEmail(email email);
 }

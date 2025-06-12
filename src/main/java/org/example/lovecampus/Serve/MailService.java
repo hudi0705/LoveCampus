@@ -47,7 +47,7 @@ public class MailService {
         mailAccount.setPort(465);
         mailAccount.setAuth(true);
         mailAccount.setSslEnable(true);
-        MailUtil.send(mailAccount, email.getEmail(), "测试", content, true);
+        MailUtil.send(mailAccount, email.getEmail(), "欢迎加入 恋与校园", content, true);
         emailMapper.InsertEmail(new email(email.getId(), email.getEmail(), randomNum));
     }
 

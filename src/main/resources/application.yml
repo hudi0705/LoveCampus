@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: druid
+    active: dev
 server:
   port: 1234
 #spring:
